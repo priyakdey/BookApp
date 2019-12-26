@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  book-app:
+    build: ./book-app:1.0
+    ports:
+     - "8080:8080"
+    volumes:
+     - /var/book-app/logs:/opt/app/logs
+    deploy:
+     mode: replicated
+     replicas: 4
